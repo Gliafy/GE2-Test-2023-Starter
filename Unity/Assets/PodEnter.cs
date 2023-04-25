@@ -15,15 +15,19 @@ public class PodEnter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnTriggerEnter(Collider collider)
-    {
-        Debug.Log("HAHAHAH");
-        if(collider.tag == "MainCamera")   
+        if (Input.GetKeyDown(KeyCode.P))
         {
+            Boid.transform.position = player.transform.position;
             Boid.transform.parent = player.transform;
         }
-        
     }
+   // private void OnTriggerEnter(Collider collider)
+   // {
+    //    Debug.Log("HAHAHAH");
+     //   if(collider.tag == "MainCamera")   
+     //   {
+      //      Boid.transform.parent = player.transform;
+      //  }
+        
+  //  }
 }
