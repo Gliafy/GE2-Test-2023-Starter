@@ -10,6 +10,7 @@ public class Boid : MonoBehaviour
     public Vector3 acceleration = Vector3.zero;
     public Vector3 velocity = Vector3.zero;
     public float mass = 1;
+    public GameObject Speedchange;
 
     [Range(0.0f, 10.0f)]
     public float damping = 0.01f;
@@ -101,6 +102,7 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        maxSpeed = Speedchange.GetComponent<PodEnter>().speed;
         force = Calculate();
         acceleration = force / mass;
         velocity += acceleration * Time.deltaTime;
