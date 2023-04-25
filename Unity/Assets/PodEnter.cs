@@ -46,7 +46,8 @@ public class PodEnter : MonoBehaviour
     {
         if (other.CompareTag("MainCamera"))
         {
-            Boids.transform.position = player.transform.position + Vector3.down * 1.5f + Vector3.back * 3f;
+            Boids.transform.position = player.transform.position + Vector3.down * 1.6f + Vector3.forward * 1.2f;
+            Boids.transform.rotation = player.transform.rotation;
             Boids.transform.parent = player.transform;
                 speed = 0;
         }
