@@ -5,6 +5,7 @@ using UnityEngine;
 public class PodEnter : MonoBehaviour
 {
     public GameObject player;
+    public GameObject Boid;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,12 @@ public class PodEnter : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(other.tag == "MainCamera")
+        Debug.Log("HAHAHAH");
+        if(collider.tag == "MainCamera")   
         {
-            player.transform.parent = transform;
+            Boid.transform.parent = player.transform;
         }
         
     }
